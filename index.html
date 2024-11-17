@@ -42,15 +42,15 @@
             </div>
             <div class="col">
               <label for="dragCoefficient">Drag Coefficient (Cd): </label>
-              <input type="number" class="form-control" id="dragCoefficient" value="0.47" step="0.01" required>
+              <input type="number" class="form-control" id="dragCoefficient" value="0.00" step="0.01" required>
             </div>
             <div class="col">
               <label for="airDensity">Air Density (ρ): </label>
-              <input type="number" class="form-control" id="airDensity" value="1.225" step="0.001" required>
+              <input type="number" class="form-control" id="airDensity" value="0.000" step="0.001" required>
             </div>
             <div class="col">
               <label for="crossSectionalArea">Cross-Sectional Area (A in m²): </label>
-              <input type="number" class="form-control" id="crossSectionalArea" value="0.01" step="0.001" required>
+              <input type="number" class="form-control" id="crossSectionalArea" value="0.00" step="0.001" required>
             </div>            
             <button type="button" id="go" class="btn btn-danger m-3">Fire</button>
             <button type="button" id="reset" class="btn btn-dark left">Reset</button>  
@@ -75,6 +75,7 @@
               <th scope="col" class="colunaTable">V(x)</th>
               <th scope="col" class="colunaTable">V(y)</th>
               <th scope="col" class="colunaTable">V</th>
+              <th scope="col" class="colunaTable">Air Drag</th>
               <th scope="col" class="colunaTable">Max Y</th>
               <th scope="col" class="colunaTable">Max X</th>
               <th scope="col" class="colunaTable">Max T</th>
@@ -84,6 +85,7 @@
             <td>00.00</td>
             <td>00.00</td>
             <td>00.00</td>
+            <td>0.00</td>
             <td>0.00</td>
             <td>0.00</td>
             <td>0.00</td>

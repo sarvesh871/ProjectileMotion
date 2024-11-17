@@ -15,6 +15,9 @@ let yz = document.getElementById("y").value;
 let xz = document.getElementById("x").value;
 let velocity = document.getElementById("velocity").value;
 let angle = document.getElementById("angle").value;
+let dragCoeff = document.getElementById("dragCoefficient").value;
+let density = document.getElementById("airDensity").value;
+let area = document.getElementById("crossSectionalArea").value;
 let t = 0;
 
 let yzComp = document.getElementById("y");
@@ -22,6 +25,9 @@ let xzComp = document.getElementById("x");
 let velocityComp = document.getElementById("velocity");
 let angleComp = document.getElementById("angle");
 let gravityComp = document.getElementById("gravity");
+let dragCoeffComp = document.getElementById("dragCoefficient");
+let densityComp = document.getElementById("airDensity");
+let areaComp = document.getElementById("crossSectionalArea");
 
 
 var timeSlider = document.getElementById("timeSlider");
@@ -58,6 +64,9 @@ go.addEventListener('click', function() {
     xz = document.getElementById("x").value;
     velocity = document.getElementById("velocity").value;
     angle = document.getElementById("angle").value;
+    dragCoeff = document.getElementById("dragCoefficient").value;
+    density = document.getElementById("airDensity").value;
+    area = document.getElementById("crossSectionalArea").value;
     t = 0;
     velocityX = velocity * Math.cos(angle * Math.PI / 180);
     console.log(angle)
@@ -79,6 +88,9 @@ function reset() {
     xz = 0;
     velocity = 50;
     angle = 45;
+    dragCoeff = 0;
+    density = 0;
+    area = 0;
     t = 0;
 
     yzComp.value = 0;
@@ -86,6 +98,9 @@ function reset() {
     velocityComp.value = 50;
     angleComp.value = 45;
     gravityComp.value = 9.8;
+    dragCoeffComp.value = 0.00;
+    densityComp.value = 0.000;
+    areaComp.value = 0.00;
     
     fire = false
     cameraZoom = 1
