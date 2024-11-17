@@ -1,8 +1,8 @@
 const canvas = document.getElementById("canvas1");
 const ctx = canvas.getContext('2d');
 
-let canvasWidth = window.innerWidth * 0.8 ;
-let canvasHeight = window.innerHeight * 0.7 ;
+let canvasWidth = window.innerWidth * 0.7 ;
+let canvasHeight = window.innerHeight * 0.6 ;
 
 canvas.width = canvasWidth;
 canvas.height = canvasHeight;
@@ -37,8 +37,8 @@ var table = document.querySelector('.table');
 var tbody = table.querySelector('tbody');
 
 
-var centerX = window.innerWidth * 0.8 / 2 
-var centerY = (window.innerHeight * 0.7 / 2) - 2
+var centerX = window.innerWidth * 0.7 / 2 
+var centerY = (window.innerHeight * 0.6 / 2) - 2
 
 let maxTime = (((velocity * Math.sin(angle * Math.PI / 180)) + Math.sqrt( Math.pow(velocity * Math.sin(angle * Math.PI / 180), 2) - 0 + 2*gravity*yz )) / gravity);
 
@@ -77,13 +77,13 @@ function reset() {
     gravity = 9.8;
     yz = 0;
     xz = 0;
-    velocity = 70;
+    velocity = 50;
     angle = 45;
     t = 0;
 
     yzComp.value = 0;
     xzComp.value = 0;
-    velocityComp.value = 70;
+    velocityComp.value = 50;
     angleComp.value = 45;
     gravityComp.value = 9.8;
     
@@ -100,8 +100,8 @@ timeSlider.addEventListener("input", function() {
 function updateTable() {
 
     var newData = [
-        { x: ((particle.x - centerX + (window.innerWidth * 0.8 / 2)) ).toFixed(2), 
-          y: (((- particle.y) + centerY - window.innerHeight * 0.7 / 2)).toFixed(2), 
+        { x: ((particle.x - centerX + (window.innerWidth * 0.7 / 2)) ).toFixed(2), 
+          y: (((- particle.y) + centerY - window.innerHeight * 0.6 / 2)).toFixed(2), 
           time: t.toFixed(2) ,
           vx: velocityX.toFixed(2),
           vy: velocityY.toFixed(2),
@@ -136,7 +136,7 @@ function updateTable() {
     var cellV = row.insertCell(5);
     cellV.textContent = v;
 
-    let maxY = ((Math.pow(velocity, 2) * Math.pow(Math.sin(angle * Math.PI / 180), 2)) / (2 * gravity)) + Number(yz);  //amanha achar eq
+    let maxY = ((Math.pow(velocity, 2) * Math.pow(Math.sin(angle * Math.PI / 180), 2)) / (2 * gravity)) + Number(yz);
     let maxX = ((0 + velocity * Math.cos(angle * Math.PI / 180) * maxTime) ) + Number(xz); 
     
     var cellMaxY = row.insertCell(6);
@@ -156,15 +156,15 @@ function drawAxis(){
     ctx.fillStyle = "#000000";
     ctx.beginPath();
     ctx.moveTo(0, 0);
-    ctx.lineTo(-window.innerWidth * 0.8, 0);
-    ctx.lineTo(window.innerWidth * 0.8, 0);
+    ctx.lineTo(-window.innerWidth * 0.7, 0);
+    ctx.lineTo(window.innerWidth * 0.7, 0);
     ctx.stroke();
 
 
     ctx.beginPath();
     ctx.moveTo(0, 0);
-    ctx.lineTo(0, window.innerHeight * 0.7);
-    ctx.lineTo(0, -window.innerHeight * 0.7)
+    ctx.lineTo(0, window.innerHeight * 0.6);
+    ctx.lineTo(0, -window.innerHeight * 0.6)
     ctx.stroke();
 
     
@@ -175,9 +175,9 @@ function draw() {
     ctx.save();
     img()
 
-    ctx.translate( window.innerWidth * 0.8 / 2, window.innerHeight * 0.7 / 2 )
+    ctx.translate( window.innerWidth * 0.7 / 2, window.innerHeight * 0.6 / 2 )
     ctx.scale(cameraZoom, cameraZoom)
-    ctx.translate( -window.innerWidth * 0.8 / 2 + cameraOffset.x, -window.innerHeight * 0.7 / 2 + cameraOffset.y )
+    ctx.translate( -window.innerWidth * 0.7 / 2 + cameraOffset.x, -window.innerHeight * 0.6 / 2 + cameraOffset.y )
 
     drawAxis()
 
@@ -197,8 +197,8 @@ function img () {
     img4.src = "4.png"; 
 
     img.onload = function () {
-        ctx.drawImage(img, 0, 0, window.innerWidth * 0.8 , window.innerHeight * 0.7 );
-        ctx.drawImage(img4, 0, 0, window.innerWidth * 0.8, window.innerHeight * 0.7); 
+        ctx.drawImage(img, 0, 0, window.innerWidth * 0.7 , window.innerHeight * 0.6 );
+        ctx.drawImage(img4, 0, 0, window.innerWidth * 0.7, window.innerHeight * 0.6 ); 
     };
 }
 class Particle{
@@ -209,9 +209,8 @@ class Particle{
     }
     
     update(){ 
-        this.y = (-(0 + velocity * Math.sin(angle * Math.PI / 180) * t - ((gravity * Math.pow(t, 2)) / 2)) ) + (centerY - ( yz)) - window.innerHeight * 0.7 / 2;
-        this.x = ((0 + velocity * Math.cos(angle * Math.PI / 180) * t) ) + Number(centerX) + Number(xz) - window.innerWidth * 0.8
-     / 2; 
+        this.y = (-(0 + velocity * Math.sin(angle * Math.PI / 180) * t - ((gravity * Math.pow(t, 2)) / 2)) ) + (centerY - ( yz)) - window.innerHeight * 0.6 / 2;
+        this.x = ((0 + velocity * Math.cos(angle * Math.PI / 180) * t) ) + Number(centerX) + Number(xz) - window.innerWidth * 0.7 / 2; 
         
         if (fire && t + 0.02 <= maxTime) {
             t += 0.05;
@@ -248,7 +247,7 @@ function init() {
 
 window.addEventListener('load', init);
 
-let cameraOffset = { x: window.innerWidth * 0.8 / 2, y: window.innerHeight * 0.7 / 2}
+let cameraOffset = { x: window.innerWidth * 0.7 / 2, y: window.innerHeight * 0.6 / 2}
 let cameraZoom = 1
 let MAX_ZOOM = 6
 let MIN_ZOOM = 1
