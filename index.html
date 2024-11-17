@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projectile Motion Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container text-center">
+        <h1>Projectile Motion Visualizer</h1>
+
+        <div class="canvas-container mb-4">
+            <canvas id="canvas1" class="border rounded"></canvas>
+        </div>
+
+        <div class="input-container row justify-content-center mb-4">
+            <div class="col-md-4 mb-2">
+                <label for="x">Initial X Position (m):</label>
+                <input type="number" id="x" value="0" class="form-control">
+            </div>
+            <div class="col-md-4 mb-2">
+                <label for="y">Initial Y Position (m):</label>
+                <input type="number" id="y" value="0" class="form-control">
+            </div>
+            <div class="col-md-4 mb-2">
+                <label for="velocity">Velocity (m/s):</label>
+                <input type="number" id="velocity" value="40" class="form-control">
+            </div>
+            <div class="col-md-4 mb-2">
+                <label for="angle">Angle (°):</label>
+                <input type="number" id="angle" value="45" class="form-control">
+            </div>
+            <div class="col-md-4 mb-2">
+                <label for="gravity">Gravity (m/s²):</label>
+                <input type="number" id="gravity" value="9.8" class="form-control">
+            </div>
+        </div>
+
+        <div class="button-container mb-4">
+            <button id="go" class="btn btn-primary">Start Simulation</button>
+            <button id="reset" class="btn btn-secondary">Reset</button>
+        </div>
+
+        <div class="form-range mb-4 text-center">
+            <label for="timeSlider">Tempo:</label>
+            <input type="range" id="timeSlider" class="slider" min="0" step="0.01" value="0">
+            <span id="currentTime">0</span>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-bordered table-sm text-center tableData">
+                <thead>
+                    <tr>
+                        <th scope="col" class="colunaTable">X</th>
+                        <th scope="col" class="colunaTable">Y</th>
+                        <th scope="col" class="colunaTable">T</th>
+                        <th scope="col" class="colunaTable">V(x)</th>
+                        <th scope="col" class="colunaTable">V(y)</th>
+                        <th scope="col" class="colunaTable">V</th>
+                        <th scope="col" class="colunaTable">Max Y</th>
+                        <th scope="col" class="colunaTable">Max X</th>
+                        <th scope="col" class="colunaTable">Max T</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>00.00</td>
+                        <td>00.00</td>
+                        <td>00.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                        <td>0.00</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
