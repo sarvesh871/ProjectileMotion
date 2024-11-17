@@ -1,99 +1,63 @@
-/* General page styling */
-body {
+:root {
+  --slide-color: #229DF2;
+}
+
+
+html, body { 
+  max-width: 100vw;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f9;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  box-sizing: border-box;
+  font-family: Raleway, sans-serif;
+  overflow-y: hidden;
+}
+.tableDiv {
+  text-align: left;
+}
+.tableData {
+  width: 550px;
+}
+.colunaTable {
+  width: calc(550px / 8);;
 }
 
-.container {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+#canvas1 {
+   box-shadow: 1px 1px 1px #000000;
   border-radius: 10px;
+  border: 10px solid #000000; 
 }
 
-/* Heading styles */
-h1 {
-  font-size: 2em;
-  color: #333;
-  margin-bottom: 20px;
+.bold {
+  font-weight: bold;
 }
-
-/* Input section styling */
-.input-container {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-.input-container div {
-  display: flex;
-  flex-direction: column;
-}
-
-label {
-  font-size: 1em;
-  color: #555;
-}
-
-input {
-  padding: 8px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 150px;
-}
-
-/* Button styling */
-.button-container {
-  margin-bottom: 20px;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 1em;
-  background-color: #007bff;
-  color: white;
-  border: none;
+table {
   border-radius: 5px;
+ 
+}
+
+.slider {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 40%;
+  height: 10px;
+  border-radius: 5px;
+  background-color: #ddd;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--slide-color);
   cursor: pointer;
-  margin: 0 10px;
-}
-
-button:hover {
-  background-color: #0056b3;
-}
-
-/* Canvas styling */
-.canvas-container {
-  display: flex;
-  justify-content: center;
-}
-
-canvas {
-  border: 2px solid #000;
-  width: 80%;
-  height: 70vh;
-  background-color: #fafafa;
-}
-
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-  .input-container {
-      flex-direction: column;
-      align-items: center;
-  }
-
-  input {
-      width: 100%;
-      max-width: 300px;
-  }
 }
