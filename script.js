@@ -151,16 +151,19 @@ function updateTable() {
     var cellV = row.insertCell(5);
     cellV.textContent = v;
 
+    var cellV = row.insertCell(6);
+    cellV.textContent = "0";
+
     let maxY = ((Math.pow(velocity, 2) * Math.pow(Math.sin(angle * Math.PI / 180), 2)) / (2 * gravity)) + Number(yz);
     let maxX = ((0 + velocity * Math.cos(angle * Math.PI / 180) * maxTime) ) + Number(xz); 
     
-    var cellMaxY = row.insertCell(6);
+    var cellMaxY = row.insertCell(7);
     cellMaxY.textContent = maxY.toFixed(2);  
     
-    var cellMaxX = row.insertCell(7);
+    var cellMaxX = row.insertCell(8);
     cellMaxX.textContent = maxX.toFixed(2); 
 
-    var cellMaxT = row.insertCell(8);
+    var cellMaxT = row.insertCell(9);
     cellMaxT.textContent = maxTime.toFixed(2);
 }
 
